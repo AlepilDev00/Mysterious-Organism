@@ -44,7 +44,7 @@ b. Use the .compareDNA() to find the two most related instances of pAequor.
 
 [Click here for my version!](https://github.com/AlepilDev00/Mysterious-Organism/blob/main/main.js)
 
-NOTE : I stored the function calls and object destructuring in comments to avoid excessive console logs during testing. You can uncomment them and add console logs as needed to see the results. I left some console logs active for key function outputs and to show what I have tested.
+NOTE : I stored the function calls and object destructuring to avoid complex console logs during testing. I left some console logs active for key function outputs and to show what I have tested.
 
 Feel free to comment and give me advice to correct my mistakes and continue to improve. Thanks a lot in advance.
 

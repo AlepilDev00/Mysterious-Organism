@@ -80,11 +80,9 @@ const pAequorFactory = (organismNum, dnaArr) => {
 //   Testing pAequorFactory, methods and destructuring
 // ------------------------------------------------------
 
-// const organism1 = pAequorFactory(1, mockUpStrand()); 
-// const organism2 = pAequorFactory(2, mockUpStrand());
-//const { specimenNum, dna } = organism1; // Testing destructuring to see only specimenNum and dna properties of organism objects
-//console.log({ specimenNum, dna });
-
+const organism1 = pAequorFactory(1, mockUpStrand());
+const organism2 = pAequorFactory(2, mockUpStrand());
+const { specimenNum, dna } = organism1; // Testing destructuring to see only specimenNum and dna properties of organism objects
 
 /* Create an array to hold 30 pAequor organisms that are likely to survive */
 // Refactored into a function in order to avoid global Set error when re-running the code multiple times
@@ -116,16 +114,13 @@ const generateSurvivingPAequor = (count, startNum) => {
 //   Testing generateSurvivingPAequor and destructuring
 // ------------------------------------------------------
 
-//const { survivingPAequor, objPAequor } = generateSurvivingPAequor(30, 1); 
-
-//HINT: Stored the returned object destructured to get both arrays and to use survivorPAequor array later because it needs full organism objects otherwise it will give error
-// Log the array of objPAequor organisms with only specimenNum and dna
+const { survivingPAequor, objPAequor } = generateSurvivingPAequor(30, 1);
 
 /* Find the two most related organisms in the survivingPAequor array */
 
 const mostRelatedOrganisms = (organisms) => {
-  let maxAffinity = 0; //This variable stores the highest percentage found so far. Every time you find a higher percentage, you update it.
-  let mostRelated = null; //This stores the pair of organisms that have the highest similarity. At the beginning is null (no organisms found yet)
+  let maxAffinity = 0; 
+  let mostRelated = null; 
   for (let i = 0; i < organisms.length; i++) {
     for (let j = i + 1; j < organisms.length; j++) {
       const similarity = organisms[i].compareDNA(organisms[j]);
@@ -142,9 +137,9 @@ const mostRelatedOrganisms = (organisms) => {
 //   Testing mostRelatedOrganisms and destructuring
 // ------------------------------------------------------
 
-//const { mostRelated, maxAffinity } = mostRelatedOrganisms(survivingPAequor); // Call the function with the survivingPAequor array destructured 
+const { mostRelated, maxAffinity } = mostRelatedOrganisms(survivingPAequor);
 
-//console.log("\nMOST RELATED ORGANISMS:");
-//console.log(`Specimen #${mostRelated[0].specimenNum} and Specimen #${mostRelated[1].specimenNum} are the most related with ${maxAffinity.toFixed(2)}% similarity.`);
+console.log("\nMOST RELATED ORGANISMS:");
+console.log(`Specimen #${mostRelated[0].specimenNum} and Specimen #${mostRelated[1].specimenNum} are the most related with ${maxAffinity.toFixed(2)}% similarity.`);
 
 
